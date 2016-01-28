@@ -6,6 +6,7 @@
   "author": "Bhuvan Arora (bhuvan.aurora@gmail.com)",
   "license": "GNU",
   "dependencies": {
+    "async": "^1.5.2",
     "express": "^4.13.4",
     "mysql": "^2.10.2"
   },
