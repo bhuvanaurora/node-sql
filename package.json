@@ -1,0 +1,16 @@
+{
+  "name": "node-sql",
+  "version": "0.0.1",
+  "descirption": "Lightweight MySQL ORM for Node.js",
+  "private": false,
+  "author": "Bhuvan Arora (bhuvan.aurora@gmail.com)",
+  "license": "GNU",
+  "dependencies": {
+    "express": "^4.13.4",
+    "mysql": "^2.10.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhuvanaurora/node-sql"
+  }
+}
