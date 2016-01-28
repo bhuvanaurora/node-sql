@@ -8,16 +8,16 @@ var Classes = Object.create(null);
 exports.createConnection = function createConnection(config) {
     var Connection = loadClass('Connection');
 
-    return new Connection({config: config}):
+    return new Connection({config: config});
 }
 
 /*
- * Type constants
+ * Schema
  * @public
  */
-//Object.defineProperty(exports, 'Types', {
-//    get: loadClass.bind(null, 'Types')
-//});
+// Object.defineProperty(exports, 'Schema', {
+//     get: loadClass.bind(null, 'Schema')
+// });
 
 /*
  * Load the given class
@@ -25,7 +25,7 @@ exports.createConnection = function createConnection(config) {
  */
 function loadClass(className) {
     var CLASS = Classes[className];
-    
+
     if(CLASS !== undefined) return CLASS;
 
     switch(className) {
