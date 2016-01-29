@@ -11,6 +11,12 @@ exports.createConnection = function createConnection(config) {
     return new Connection({config: config});
 }
 
+exports.Schema = function Schema(schemaObject) {
+    var Schema = loadClass('Schema');
+
+    return new Schema(schemaObject);
+}
+
 /*
  * Schema
  * @public
@@ -31,6 +37,9 @@ function loadClass(className) {
     switch(className) {
         case 'Connection':
             CLASS = require('./lib/Connection');
+            break;
+        case 'Schema':
+            CLASS = require('./lib/Schema');
             break;
         default:
             throw new Error('Cannot find class \'' + className + '\'');

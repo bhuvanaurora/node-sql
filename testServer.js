@@ -1,21 +1,12 @@
 var nodeSql = require('./index');
 
-var conn = nodeSql.createConnection({
-    connectionLimit : 100,
-    host : 'localhost',
-    user : 'paytm',
-    password : 'paytm',
-    database : 'testsql',
-    debug : false
-});
-
 var app = require('express')();
 
 var server = app.listen(3002, function(err) {
     console.log('started');
 });
 
-var testSchema = conn.Schema({
+nodeSql.Schema({
     hotelDetails: {
         hotelId: ["BIGINT", "UNSIGNED", "NOT NULL", "PRIMARY KEY", "AUTO_INCREMENT"],
         hotelName: ["VARCHAR(128)", "NOT NULL"],
@@ -73,4 +64,13 @@ var testSchema = conn.Schema({
         updatedBy: ["VARCHAR(30)"],
         createdAt: ["TIMESTAMP", "NOT NULL", "DEFAULT CURRENT_TIMESTAMP"]
     }
+});
+
+var conn = nodeSql.createConnection({
+    connectionLimit : 100,
+    host : 'localhost',
+    user : 'paytm',
+    password : 'paytm',
+    database : 'testsql',
+    debug : false
 });
