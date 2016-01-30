@@ -74,3 +74,7 @@ var conn = nodeSql.createConnection({
     database : 'testsql',
     debug : false
 });
+
+conn.queryTable('hotelDetails', {'hotelId': 7, 'restaurant': 1}, function(hotelData) {
+    console.log(hotelData);
+});
