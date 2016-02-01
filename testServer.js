@@ -63,6 +63,16 @@ nodeSql.Schema({
         createdBy: ["VARCHAR(30)"],
         updatedBy: ["VARCHAR(30)"],
         createdAt: ["TIMESTAMP", "NOT NULL", "DEFAULT CURRENT_TIMESTAMP"]
+    },
+    paymentOptions: {
+        id: ["BIGINT", "UNSIGNED", "NOT NULL", "PRIMARY KEY"],
+        paymentOption: ["VARCHAR(128)"]
+    },
+    paymentOptionHotelMap: {
+        hotelId: ["BIGINT", "UNSIGNED", "NOT NULL"],
+        paymentOptionId: ["BIGINT", "UNSIGNED", "NOT NULL"],
+        FOREIGN_KEY: ["hotelId", "hotelDetails", "hotelId"],
+        FOREIGN_KEY: ["paymentOptionId", "paymentOptions", "id"]
     }
 });
 
